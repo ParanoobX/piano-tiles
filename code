@@ -1,0 +1,40 @@
+from pyautogui import *
+import pyautogui
+import time
+import keyboard
+import random
+import win32api, win32con
+
+#Tile 1 X:  795 Y:  516 RGB: (  0,   0,   0)
+#Tile 2 X:  703 Y:  523 RGB: (  0,   0,   0)
+#Tile 3 X:  581 Y:  506 RGB: (  0,   0,   0)
+#Tile 4 X:  438 Y:  495 RGB: (  0,   0,   0)
+#Tile 1 D X:  400 Y:  875 RGB: (  0,   0,   0)
+#Tile 2 D X:  526 Y:  881 RGB: (  0,   0,   0)
+#Tile 3 D X:  653 Y:  874 RGB: (  0,   0,   0)
+#Tile 4 D X:  792 Y:  873 RGB: (  0,   0,   0)
+
+def click(x,y):
+    win32api.SetCursorPos((x,y))
+    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
+    time.sleep(0.1) #This pauses the script for 0.1 seconds
+    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+
+while keyboard.is_pressed('q') == False:
+    
+    if pyautogui.pixel(795, 516)[0] == 0:
+        click(795, 516)
+    if pyautogui.pixel(703, 523)[0] == 0:
+        click(703, 523)
+    if pyautogui.pixel(581, 506)[0] == 0:
+        click(581, 506)
+    if pyautogui.pixel(438, 495)[0] == 0:
+        click(438, 495)
+    if pyautogui.pixel(400, 875)[0] == 0:
+        click(400, 875)
+    if pyautogui.pixel(526, 881)[0] == 0:
+        click(526, 881)
+    if pyautogui.pixel(653, 874)[0] == 0:
+        click(653, 874)
+    if pyautogui.pixel(792, 873)[0] == 0:
+        click(792, 873)
